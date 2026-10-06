@@ -39,4 +39,15 @@ using(order_id)
 left join {{ref("int_order_reviews_aggregated")}} r
 using(order_id)
 )
-select count(*) from cte
+
+select * from cte
+
+ -- validations
+-- select 
+-- payment_matches_order_flag,
+-- count(*) -- 99441
+-- -- sum(total_items_price) -- 13553879.33
+--  from cte
+--  group by 1 
+--  where customer_unique_id is null
+-- where item_count is null and total_payment_value is null and avg_review_score is null
